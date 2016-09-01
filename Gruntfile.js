@@ -13,7 +13,6 @@ module.exports = function(grunt) {
       }
     },
     'clean': {
-      'remove-java-model': ['generated-sources'],
       'clean-java-model-cruft': [
          'generated-sources/docs', 
          'generated-sources/gradle', 
@@ -33,7 +32,7 @@ module.exports = function(grunt) {
     },
     'shell': {
       'generate-java-model': {
-        command : 'echo mv generated-sources/pom.xml generated-sources/pom.xml.before && \
+        command : 'mv generated-sources/pom.xml generated-sources/pom.xml.before && \
           java -jar swagger-codegen-cli.jar generate \
           -i ./swagger.yaml \
           -l java \
@@ -55,18 +54,18 @@ module.exports = function(grunt) {
           }
         }
       },
-    },
-    'release-mikkelinyt-java-client': {
-      command : 'mvn -B release:clean release:prepare release:perform',
-      options: {
-        execOptions: {
-          cwd: 'generated-sources'
+      'release-mikkelinyt-java-client': {
+        command : 'mvn -B release:clean release:prepare release:perform',
+        options: {
+          execOptions: {
+            cwd: 'generated-sources'
+          }
         }
       }
     }
   });
   
   grunt.registerTask('download-dependencies', 'if-missing:curl:swagger-codegen');
-  grunt.registerTask('default', ['download-dependencies', 'clean:remove-java-model', 'shell:generate-java-model', 'clean:clean-java-model-cruft', 'shell:install-java-model' ]);
+  grunt.registerTask('default', ['download-dependencies', 'shell:generate-java-model', 'clean:clean-java-model-cruft', 'shell:install-java-model', 'shell:release-mikkelinyt-java-client']);
   
 };
