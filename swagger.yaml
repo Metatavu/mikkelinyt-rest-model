@@ -1,0 +1,103 @@
+swagger: '2.0'
+info:
+  title: MikkeliNyt
+  version: "0.0.1"
+host: www.mikkelinyt.fi
+schemes:
+  - http
+basePath: /json.php
+consumes:
+  - application/json;charset=utf-8
+produces:
+  - application/json;charset=utf-8
+paths:
+  /:
+    get:
+      operationId: listEvents
+      summary: List events
+      description: |
+        Lists events
+      parameters:
+        - name: limit
+          in: query
+          description: Limit number of results
+          required: false
+          type: integer
+          format: int32
+      tags:
+        - Events
+      responses:
+        200:
+          description: An event response
+          schema:
+            $ref: '#/definitions/EventsResponse'
+        401:
+          description: Attempted to make a call with invalid api key
+          schema:
+            $ref: '#/definitions/Unauthorized'
+        500:
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/InternalServerError'
+definitions:
+  EventsResponse:
+    properties:
+      status:
+        type: integer
+        format: int32
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Event'
+  Event:
+    properties:
+      id:
+        type: string
+        format: uuid
+      url:
+        type: string
+        format: url
+      name:
+        type: string
+      description:
+        type: string
+      niceDatetime:
+        type: string
+      start:
+        type: string
+      end:
+        type: string
+      city:
+        type: string
+      place:
+        type: string
+      address:
+        type: string
+      zip:
+        type: string    
+      location:
+        type: string
+      thumb:
+        type: string
+        format: url
+      image:
+        type: string
+        format: url
+  InternalServerError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+  Unauthorized:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
