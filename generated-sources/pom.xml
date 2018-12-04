@@ -5,7 +5,7 @@
   <packaging>jar</packaging>
   <name>mikkelinyt-rest-model</name>
   <description>REST models for MikkeliNyt</description>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.1</version>
   <url>https://github.com/metatavu/mikkelinyt-rest-model</url>
 
   <licenses>
@@ -45,7 +45,7 @@
     <developerConnection>scm:git:git@github.com:metatavu/mikkelinyt-rest-model.git</developerConnection>
     <url>git@github.com:metatavu/mikkelinyt-rest-model.git</url>
     <connection>scm:git:git@github.com:metatavu/mikkelinyt-rest-model.git</connection>
-    <tag>HEAD</tag>
+    <tag>0.1.1</tag>
   </scm>
 
   <organization>
@@ -104,8 +104,10 @@
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <checkModificationExcludes>
             <checkModificationExclude>pom.xml</checkModificationExclude>
+            <checkModificationExclude>pom.xml.before</checkModificationExclude>
             <checkModificationExclude>src/**</checkModificationExclude>
             <checkModificationExclude>generated-sources/pom.xml</checkModificationExclude>
+            <checkModificationExclude>generated-sources/pom.xml.before</checkModificationExclude>
             <checkModificationExclude>generated-sources/src/**</checkModificationExclude>
           </checkModificationExcludes>          
         </configuration>
