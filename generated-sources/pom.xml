@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>fi.otavanopisto.mikkelinyt.mikkelinyt-rest-model</groupId>
+  <groupId>fi.metatavu.mikkelinyt.mikkelinyt-rest-model</groupId>
   <artifactId>mikkelinyt-rest-model</artifactId>
   <packaging>jar</packaging>
   <name>mikkelinyt-rest-model</name>
-  <description>REST client library for Palvelutietoväylä (PTV)</description>
-  <version>0.0.2-SNAPSHOT</version>
-  <url>https://github.com/otavanopisto/mikkelinyt-rest-model</url>
+  <description>REST models for MikkeliNyt</description>
+  <version>0.1.0-SNAPSHOT</version>
+  <url>https://github.com/metatavu/mikkelinyt-rest-model</url>
 
   <licenses>
     <license>
@@ -27,17 +28,24 @@
         <role>Owner</role>
       </roles>
     </developer>
+    <developer>
+      <id>metatavu</id>
+      <email>devs@metatavu.fi</email>
+      <name>Metatavu Oy</name>
+      <organization>Metatavu Oy</organization>
+      <organizationUrl>http://www.metatavu.fi/</organizationUrl>
+    </developer>
   </developers>
 
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/otavanopisto/mikkelinyt-rest-model/issues</url>
+    <url>https://github.com/metatavu/mikkelinyt-rest-model/issues</url>
   </issueManagement>
 
   <scm>
-    <developerConnection>scm:git:git@github.com:otavanopisto/mikkelinyt-rest-model.git</developerConnection>
-    <url>git@github.com:otavanopisto/mikkelinyt-rest-model.git</url>
-    <connection>scm:git:git@github.com:otavanopisto/mikkelinyt-rest-model.git</connection>
+    <developerConnection>scm:git:git@github.com:metatavu/mikkelinyt-rest-model.git</developerConnection>
+    <url>git@github.com:metatavu/mikkelinyt-rest-model.git</url>
+    <connection>scm:git:git@github.com:metatavu/mikkelinyt-rest-model.git</connection>
     <tag>HEAD</tag>
   </scm>
 
