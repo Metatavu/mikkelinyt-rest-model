@@ -37,8 +37,8 @@ module.exports = function(grunt) {
           -i ./swagger.yaml \
           -l java \
           --api-package remove \
-          --model-package fi.otavanopisto.mikkelinyt.model \
-          --group-id fi.otavanopisto.mikkelinyt.mikkelinyt-rest-model \
+          --model-package fi.metatavu.mikkelinyt.model \
+          --group-id fi.metatavu.mikkelinyt.mikkelinyt-rest-model \
           --artifact-id mikkelinyt-rest-model \
           --artifact-version `mvn -f generated-sources/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` \
           --template-dir templates \
